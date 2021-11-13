@@ -1,2 +1,5 @@
 # Project exclude paths
 /out/
+/.idea/
+/resources/
+/System_02.iml
