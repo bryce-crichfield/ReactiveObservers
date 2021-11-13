@@ -1,0 +1,11 @@
+UI = {
+    VerticalContainer = {
+        ID = "VC1"
+        Button = {
+            ID = "Button1"                 ---> "VC1.Button1"
+            Position = 10, 10
+            Size = 10, 10
+            Sprite = "/resource/sprites/01.png"
+        }
+    }
+}

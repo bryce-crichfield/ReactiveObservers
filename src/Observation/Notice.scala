@@ -1,0 +1,5 @@
+package Observation
+
+trait Notice {
+
+}
