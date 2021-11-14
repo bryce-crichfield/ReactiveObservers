@@ -29,6 +29,10 @@ trait Component {
     _size = Size(w, h)
   def size(s: Size): Unit =
     _size = s
+  def size(s: Int): Unit =
+    _size = Size(s)
+  def width(w: Int): Unit = _size = Size(w.toDouble, _size.h)
+  def height(h: Int): Unit = _size = Size(_size.w, h.toDouble)
 
   // [ METHODS ] --------------------------------------------------------------------
   def scale(px: Int, enlarge: Boolean): Unit = {

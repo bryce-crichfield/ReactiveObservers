@@ -2,7 +2,7 @@ package Graphics
 
 import Component.Entity
 import Component.TileMap.Tile
-import Core.State
+import Core.State.State
 import _root_.Component.UI.Container.UIContainer
 import _root_.Component.UI.{Border, UIComponent, UIText}
 

@@ -1,5 +1,5 @@
 import Component.Position
-import Core.State
+import Core.State.State
 import Input.MouseFlag
 
 import java.awt.event.MouseEvent

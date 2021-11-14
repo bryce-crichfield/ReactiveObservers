@@ -29,16 +29,23 @@ trait UIComponent extends Component {
     _parent = Some(component)
   def background(color: Color): Unit =
     _background = color
-  def border(color: Color): Unit =
+  def border(pixels: Int, color: Color): Unit =
     _border = _border map {b => b.copy(color = color)}
   def text(text: String): Unit =
     _text = _text map (t => t.copy(text = text))
   def text(color: Color): Unit =
     _text = _text map (t => t.copy(color = color))
-  def margin(t: Int, r: Int, b: Int, l: Int): Unit =
-    _margin = UISpacing(t, r, b, l)
-  def padding(t: Int, r: Int, b: Int, l: Int): Unit =
-    _padding = UISpacing(t, r, b, l)
+  def margin(top: Int = _margin.top,
+             right: Int = _margin.right,
+             bottom: Int = _margin.bottom,
+             left: Int = _margin.left)
+  : Unit =
+    _margin = UISpacing(top, right, bottom, left)
+  def padding(top: Int = _padding.top,
+              right: Int = _padding.right,
+              bottom: Int = _padding.bottom,
+              left: Int = _padding.left): Unit =
+    _padding = UISpacing(top, right, bottom, left)
 
   // [ METHODS ] -------------------------------------------------------------------
   def update(): Unit

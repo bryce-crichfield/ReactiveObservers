@@ -1,5 +1,6 @@
 package Core
 
+import Core.State.StateManager
 import Graphics.Display
 
 trait Clock extends App {

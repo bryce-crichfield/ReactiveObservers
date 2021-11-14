@@ -1,6 +1,6 @@
 package Component
 
-import Core.StateManager
+import Core.State.StateManager
 import Observation.{Subscriber, UpdateNotice}
 
 // TODO: This will define general locomotion for a class

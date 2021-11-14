@@ -63,6 +63,9 @@ package object Component {
     def toInt: Size =
       Size(Math.round(w).toInt, Math.round(h).toInt)
   }
+  object Size {
+    def apply(uniform: Int): Size = Size(uniform.toDouble, uniform.toDouble)
+  }
 
 
   case class Matrix(v1: Position, v2: Position)

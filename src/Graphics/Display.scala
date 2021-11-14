@@ -1,6 +1,6 @@
 package Graphics
 
-import Core.State
+import Core.State.State
 import Input.{Keyboard, Mouse}
 
 import java.awt.image.BufferStrategy
