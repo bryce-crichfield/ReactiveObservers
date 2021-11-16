@@ -8,8 +8,7 @@ trait UIContainer extends UIComponent {
   protected var _children: List[UIComponent] = List()
 
   // [ GETTERS ] -------------------------------------------------------------------
-  def children: List[UIComponent] =
-    _children
+  def children: List[UIComponent] = _children
 
   // [ METHODS ] -------------------------------------------------------------------
 
@@ -34,4 +33,11 @@ trait UIContainer extends UIComponent {
   def clear(): Unit =
     _children = List[UIComponent]()
 
+  // implemented for the use in a grid container
+  def child(index: Int): UIComponent =
+    _children(index)
+
+  // implemented for the use in a grid container
+  def swap(index: Int, component: UIComponent): Unit =
+    _children = _children.updated(index, component)
 }

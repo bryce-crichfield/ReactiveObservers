@@ -115,14 +115,18 @@ package object Container {
     type FlexApplicator = ContentSizeCalculator => ContentRepositioner => UIFlexContainer => Unit
     private val FlexApplicator: FlexApplicator = calculator => repositionContents => { container =>
       val snap = CalculateContainerSize(container, calculator)
-      if (container.dimensionSnap) {
-        container size(snap.w, snap.h)
-      } else {
-        container size(container.size.w, snap.h)
+      container.sizingMode match {
+        case Automatic => container.size(snap.w, snap.h)
+        case Absolute => container.size(container.size.w, snap.h)
       }
       repositionContents(container)
     }
     val Vertical: FlexStrategy = FlexApplicator(VerticalContentSizeCalculator)(VerticalContentRepositioner)
     val Horizontal: FlexStrategy = FlexApplicator(HorizontalContentSizeCalculator)(HorizontalContentRepositioner)
     // ---------------------------------------------------------------------------------
+
+    trait SizingMode
+    case object Absolute extends SizingMode
+    case object Automatic extends SizingMode
+
 }

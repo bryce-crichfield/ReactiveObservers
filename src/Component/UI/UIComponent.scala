@@ -9,7 +9,7 @@ trait UIComponent extends Component {
 
   // [ FIELDS ] --------------------------------------------------------------------
   protected var _parent: Option[UIContainer] = None
-  protected var _border: Option[Border] = Some(Border(Color.BLACK, 4, 10))
+  protected var _border: Option[Border] = Some(Border(Color.BLACK, 4, 0))
   protected var _margin: UISpacing = UISpacing(0,0,0,0)
   protected var _padding: UISpacing = UISpacing(0,0,0,0)
   protected var _background: Color = Color.RED
@@ -30,7 +30,7 @@ trait UIComponent extends Component {
   def background(color: Color): Unit =
     _background = color
   def border(pixels: Int, color: Color): Unit =
-    _border = _border map {b => b.copy(color = color)}
+    _border = _border map {b => b.copy(color = color, thickness = pixels)}
   def text(text: String): Unit =
     _text = _text map (t => t.copy(text = text))
   def text(color: Color): Unit =
